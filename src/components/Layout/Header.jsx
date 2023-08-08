@@ -2,14 +2,12 @@ import LOGO from "../../assets/images/logo.png";
 
 const Header = () => {
   return (
-    <div className="h-[8%] w-[100%] flex justify-end absolute top-0 pr-4   ">
-      <img
+    <img
         src={LOGO}
         alt="logo"
-        // className="xl:w-[15%] lg:w-[20%] md:w-[22%] sm:w-[25%] w-[32%] "
-        className="w-[20%] h-[80%] pt-3 "
+        className="absolute"
+        style={{top:'10px',right: '10px',width: '100%',height: 'auto', maxWidth: '75px', zIndex: 0}}
       />
-    </div>
   );
 };
 export default Header;

@@ -3,7 +3,7 @@ import FooterImg from "../../assets/images/Bottom Flag Img.png";
 import DilliChaloText from "../../assets/images/DilliChalo.png";
 import { useNavigate } from "react-router-dom";
 import FlagGif from "../../assets/images/Flag.gif";
-
+import Footer from "../Layout/Footer";
 const Flag_Page = () => {
   const navigate = useNavigate();
 
@@ -13,9 +13,7 @@ const Flag_Page = () => {
 
   return (
     <div className=" w-[100%] h-[100vh] backImage">
-      <div className="h-[8vh] ">
-        <Header />
-      </div>
+      <Header />
       <div className="h-[72vh]    ">
         <div className="h-[100%] w-[100%] relative  ">
           <img src={DilliChaloText} alt="" className=" h-[90%] " />
@@ -32,12 +30,9 @@ const Flag_Page = () => {
           className="absolute bottom-0 h-[85%] w-[70%] left-16"
         />
       </div>
-
-      {/* footer */}
-      <div className="h-[20vh]  relative">
-        <img src={FooterImg} alt="" className="h-[20vh]" />
-      </div>
+      <Footer/>
     </div>
+    
   );
 };
 export default Flag_Page;
