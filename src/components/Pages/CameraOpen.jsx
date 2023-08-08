@@ -17,6 +17,8 @@ const videoConstraints = {
 const ClickSelfi = () => {
   const navigate = useNavigate();
   const webcamRef = useRef(null);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState('');
 
   const uploadImage = async (imageSrc) => {
     let strImage = imageSrc.replace(/^data:image\/[a-z]+;base64,/, "");
@@ -37,14 +39,25 @@ const ClickSelfi = () => {
           },
         }
       );
+      if (resp.status === 215) {
+        setError(resp.data.msg);
+        setLoading(false);
+        return;
+      }
       const imageConverted = resp?.data?.output_url;
       navigate("/selfie-preview", { state: imageConverted });
     } catch (error) {
-      console.log(error);
+      setError(error);
+      setLoading(false);
     }
   };
 
   const capture = useCallback(async () => {
+    setError('');
+    if (loading) {
+      return;
+    }
+    setLoading(true);
     const imageSrc = webcamRef.current.getScreenshot();
     await uploadImage(imageSrc);
   }, [webcamRef, navigate, uploadImage]);
@@ -53,9 +66,10 @@ const ClickSelfi = () => {
     height: '100%',
     width: 'auto',
     position: "absolute",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -50%)",
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%, -50%)",
+    maxWidth: '1000%'
   };
 
   return (
@@ -97,6 +111,26 @@ const ClickSelfi = () => {
             style={webcamStyle}
           />
         </div>
+
+        <div style={{
+          position: 'absolute',
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+          marginTop: '150px'
+        }}>
+          <button
+            className="btn bg-[#007DC4] text-white  rounded-lg "
+            disabled={loading}
+            style={{padding: '10px 50px'}}
+            onClick={capture}
+          >
+            {loading ? 'Please Wait' : 'Capture'}
+          </button> 
+          <p>{error}</p>
+        </div>
+
+        
 
       {/* <button
         className="btn bg-[#007DC4] text-white  rounded-lg "
