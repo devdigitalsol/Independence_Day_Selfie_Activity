@@ -18,7 +18,7 @@ const HeroPage = () => {
   };
 
   return (
-    <div className=" w-[100%] h-[100vh] backImage" style={{overflow: 'auto',padding: '0 0 150px 0'}}>
+    <div className=" w-[100%] h-[100vh] backImage" style={{overflow: 'auto',padding: '0 0 140px 0'}}>
       <Header />
       <div className="flex justify-center items-center ">
         <div className="pb-4">

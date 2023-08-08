@@ -19,12 +19,16 @@ const Selfie_Preview = () => {
       <Header />
       <div className="h-[100%] w-[100%] xl:w-[40%]  relative   ">
         <img src={AcidityText} alt="" className="h-[100%] absolute" />
-        <div className=" absolute acidity-text-div">
-          <img
-            src={imageConverted}
-            alt=""
-            className="absolute h-[70%] w-[50%] center-circle rounded-full  "
-          />
+        <div className=" absolute acidity-text-div" style={{
+          backgroundImage: `url(${imageConverted})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          width: '200px',
+          height: '200px',
+          borderRadius: '50%',
+          overflow: 'hidden'
+        }}>
+          
           <img
             src={TrioCircle}
             alt=""
