@@ -5,6 +5,7 @@ import TrioCircle from "../../assets/images/TrioCircle.png";
 import Camera from "../../assets/images/Camera.png";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Layout/Footer";
+import MyScratchCard from "../Layout/Scratch";
 
 const ClickSelfi = () => {
   const navigate = useNavigate();
