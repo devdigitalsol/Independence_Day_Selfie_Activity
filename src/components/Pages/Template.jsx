@@ -10,6 +10,7 @@ import Text3 from "../../assets/images/HappyIndependence.png";
 import { useUserContext } from "../context/UserContext";
 import Text2 from "../../assets/images/Asset21_2.png";
 import axios from "axios";
+import Footer from "../Layout/Footer";
 
 const Template = () => {
   const [loading, setLoading] = useState(false);
@@ -76,9 +77,7 @@ const Template = () => {
 
   return (
     <div className=" w-[100%] h-[100vh]  backImage" id="templateView">
-      <div className="h-[8vh]">
-        <Header />
-      </div>
+      <Header />
       <div className="h-[69vh]  flex justify-center items-center ">
         <div className="h-[100%] w-[95%] ">
           <div className="h-[20%]  center-content-flex">
@@ -119,9 +118,7 @@ const Template = () => {
           Download
         </button>
       </div>
-      <div className="h-[17vh] ">
-        <img src={FooterImg} alt="" className="h-[17vh] " />
-      </div>
+      <Footer />
     </div>
   );
 };

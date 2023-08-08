@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../context/UserContext";
-import Footer from '../Layout/Footer';
+import Footer from "../Layout/Footer";
 
 const schema = yup
   .object({
@@ -57,10 +57,13 @@ const LoginForm = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="w-[100%] h-[100vh] backImage" style={{overflow: 'auto'}}>
+    <div className="w-[100%] h-[100vh] backImage" style={{ overflow: "auto" }}>
       <Header />
-      <form onSubmit={handleSubmit(onSubmit)} style={{position: 'relative',zIndex: '12',padding: '70px 0'}}>
-        <div className="center-content-flex" style={{height: '620px'}}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        style={{ position: "relative", zIndex: "12", padding: "70px 0" }}
+      >
+        <div className="center-content-flex" style={{ height: "620px" }}>
           <div className="h-[100%] w-[90%] xl:w-[40%] lg:w-[60%] md:w-[70%] sm:w-[80%]   ">
             <div className="h-[10%] center-content-flex items-end ">
               <p className="p-dynamic-text ">Fill the below details</p>

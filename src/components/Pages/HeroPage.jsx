@@ -8,6 +8,7 @@ import Fighter4 from "../../assets/images/Fighter4.png";
 import BackFlag from "../../assets/images/BackFlagImage.png";
 import "../../components/Layout/Animation.css";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Layout/Footer";
 
 const HeroPage = () => {
   const navigate = useNavigate();
@@ -18,9 +19,7 @@ const HeroPage = () => {
 
   return (
     <div className=" w-[100%] h-[100vh] backImage">
-      <div className="h-[8vh]">
-        <Header />
-      </div>
+      <Header />
       <div className="h-[69vh] flex justify-center items-center ">
         <div className="h-[100%] w-[90%] xl:w-[50%] lg:w-[80%] md:w-[90%] sm:w-[90%]  pb-4   ">
           <div className="h-[90%]  relative">
@@ -57,11 +56,7 @@ const HeroPage = () => {
           Next
         </button>
       </div>
-
-      {/* footer */}
-      <div className="h-[17vh] ">
-        <img src={FooterImg} alt="" className="h-[17vh]" />
-      </div>
+      <Footer />
     </div>
   );
 };

@@ -14,25 +14,30 @@ const Flag_Page = () => {
   return (
     <div className=" w-[100%] h-[100vh] backImage">
       <Header />
-      <div className="h-[72vh]    ">
-        <div className="h-[100%] w-[100%] relative  ">
-          <img src={DilliChaloText} alt="" className=" h-[90%] " />
-
-          <div className=" h-[10%] center-content-flex   ">
-            <button className="button-design" onClick={handleClick}>
-              Next
-            </button>
-          </div>
+      <div
+        className="center-content-flex flex-col "
+        style={{ height: "700px" }}
+      >
+        <img src={DilliChaloText} alt="" />
+        <div className=" h-[10%] center-content-flex ">
+          <button className="button-design" onClick={handleClick}>
+            Next
+          </button>
         </div>
         <img
           src={FlagGif}
           alt=""
-          className="absolute bottom-0 h-[85%] w-[70%] left-16"
+          className="absolute w-[100%]"
+          style={{
+            width: "100%",
+            height: "auto",
+            maxWidth: "350px",
+            bottom: "25px",
+          }}
         />
       </div>
-      <Footer/>
+      <Footer />
     </div>
-    
   );
 };
 export default Flag_Page;

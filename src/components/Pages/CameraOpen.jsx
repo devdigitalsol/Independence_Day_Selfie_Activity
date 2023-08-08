@@ -6,6 +6,7 @@ import TrioCircle from "../../assets/images/TrioCircle.png";
 import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
 import axios from "axios";
+import Footer from "../Layout/Footer";
 
 const videoConstraints = {
   width: 1280,
@@ -53,12 +54,13 @@ const ClickSelfi = () => {
   };
 
   return (
-    <div className=" w-[100%] h-[100vh] backImage">
-      <div className="h-[8vh]">
-        <Header />
-      </div>
-      <div className="h-[69vh] flex justify-center items-center  ">
-        <div className="h-[100%] w-[100%] xl:w-[40%]  relative  ">
+    <div className="w-[100%] h-[100vh] backImage">
+      <Header />
+      <div
+        className="center-content-flex bg-red-300  "
+        style={{ height: "500px" }}
+      >
+        <div className="h-[100%] w-[100%]   relative  ">
           <img src={AcidityText} alt="" className="h-[100%] absolute" />
           <div className="absolute acidity-text-div">
             <Webcam
@@ -84,10 +86,7 @@ const ClickSelfi = () => {
         </button>
       </div>
 
-      {/* footer */}
-      <div className="h-[17vh] ">
-        <img src={FooterImg} alt="" className="h-[17vh]" />
-      </div>
+      <Footer />
     </div>
   );
 };
