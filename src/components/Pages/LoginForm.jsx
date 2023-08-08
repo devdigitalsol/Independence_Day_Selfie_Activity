@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../context/UserContext";
 
 const schema = yup
   .object({
@@ -38,14 +39,17 @@ const LoginForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     resolver: yupResolver(schema),
   });
 
+  const { setUserData } = useUserContext();
+
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
+    setUserData(data);
     navigate("/flagpage");
   };
 
@@ -57,64 +61,62 @@ const LoginForm = () => {
         <Header />
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="h-[72vh] flex justify-center items-center">
-          <div className="h-[100%] w-[90%] xl:w-[40%] lg:w-[60%] md:w-[70%] sm:w-[80%]  ">
-            <div className="h-[14%] flex justify-center items-center">
-              <p className="text-3xl text-[#007DC4] font-bold ">
-                Fill the below details
-              </p>
+        <div className="h-[72vh] center-content-flex">
+          <div className="h-[100%] w-[90%] xl:w-[40%] lg:w-[60%] md:w-[70%] sm:w-[80%]   ">
+            <div className="h-[10%] center-content-flex items-end ">
+              <p className="p-dynamic-text ">Fill the below details</p>
             </div>
-            <div className="h-[14%]  flex justify-center items-center flex-col ">
+            <div className="h-[14%]  center-content-flex flex-col  ">
               <input
                 placeholder="Employee code without P000 "
                 name="employeeCode"
                 id="employeeCode"
                 {...register("employeeCode")}
-                className="textFieldSize inputSize  p-[20px]  rounded-2xl border-2 border-[#00ADEE] placeholder-[#007DC4]"
+                className="textField placeholder-[#007DC4] text-[#007DC4] placeholder:text-[14px] text-center placeholder:font-extralight   "
               />
               <p className="error-msg">{errors.employeeCode?.message}</p>
             </div>
-            <div className="h-[14%]  flex justify-center items-center flex-col">
+            <div className="h-[14%]  center-content-flex flex-col ">
               <input
                 placeholder="Name of doctor "
                 name="employeeName"
                 id="employeeName"
                 {...register("employeeName")}
-                className="textFieldSize inputSize  p-[20px]  rounded-2xl border-2 border-[#00ADEE] placeholder-[#007DC4]  "
+                className="textField placeholder-[#007DC4] text-[#007DC4] placeholder:text-[14px] text-center placeholder:font-extralight  "
               />
               <p className="error-msg">{errors.employeeName?.message}</p>
             </div>
-            <div className="h-[14%] flex justify-center items-center flex-col">
+            <div className="h-[14%] center-content-flex flex-col ">
               <input
                 name="noOfYearsPractice"
                 id="noOfYearsPractice"
                 {...register("noOfYearsPractice")}
                 placeholder="No. of years of practice "
-                className="textFieldSize inputSize  p-[20px]  rounded-2xl border-2 border-[#00ADEE] placeholder-[#007DC4]  "
+                className="textField placeholder-[#007DC4] text-[#007DC4] placeholder:text-[14px] text-center placeholder:font-extralight   "
               />
               <p className="error-msg">{errors.noOfYearsPractice?.message}</p>
             </div>
-            <div className="h-[14%]  flex justify-center items-center flex-col">
+            <div className="h-[14%]  center-content-flex flex-col ">
               <input
                 name="noOfPatientsDaily"
                 id="noOfPatientsDaily"
                 {...register("noOfPatientsDaily")}
                 placeholder="No. of patients treated daily "
-                className="textFieldSize inputSize  p-[20px]  rounded-2xl border-2 border-[#00ADEE] placeholder-[#007DC4]  "
+                className="textField placeholder-[#007DC4] text-[#007DC4] placeholder:text-[14px] text-center placeholder:font-extralight  "
               />
               <p className="error-msg">{errors.noOfPatientsDaily?.message}</p>
             </div>
-            <div className="h-[14%]  flex justify-center items-center ">
-              <div className="flex p-2  items-center gap-4 justify-center text-xl  w-[80%] flex-col ">
-                <div className="flex p-2  items-center gap-4 justify-center conditionText  w-[100%] ">
+            <div className="h-[18%]  center-content-flex">
+              <div className="center-content-flex p-2   gap-4  text-xl  w-[90%] flex-col ">
+                <div className="center-content-flex p-2  gap-4  conditionText  w-[100%] ">
                   <input
                     type="checkbox"
                     name="termsAndCondition"
                     id="termsAndCondition"
-                    className=""
+                    className="checkbox-size"
                     {...register("termsAndCondition")}
                   />
-                  <span className="text-[#007DC4] ">
+                  <span className="text-[#007DC4] text-[16px] font-medium  ">
                     I have read and agree to the{" "}
                     <span
                       className="underline text-[#007DC4] "
@@ -131,10 +133,12 @@ const LoginForm = () => {
                 </div>
               </div>
             </div>
-            <div className="h-[16%] flex justify-center items-center">
+            <div className="h-[16%] center-content-flex">
               <button
                 type="submit"
-                className="btn bg-[#007DC4] text-white  rounded-lg "
+                disabled={!isValid}
+                id="submit_button"
+                className="button-design  bg-[#007DC4] h-[50%] w-[45%] "
               >
                 SUBMIT
               </button>
@@ -143,7 +147,7 @@ const LoginForm = () => {
         </div>
         {modalOpen && (
           <Modal setModalOpen={setModalOpen}>
-            <div className="flex justify-center items-center flex-col gap-4">
+            <div className="center-content-flex flex-col gap-4">
               <h4 className="text-[#007DC4] font-bold text-2xl mb-1">
                 Terms & Conditions:
               </h4>

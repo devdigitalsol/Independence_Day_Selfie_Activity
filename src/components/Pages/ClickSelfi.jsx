@@ -18,18 +18,18 @@ const ClickSelfi = () => {
         <Header />
       </div>
       <div className="h-[72vh] flex justify-center items-center  ">
-        <div className="h-[100%] w-[100%] xl:w-[40%]  relative  ">
+        <div className="h-[100%] w-[100%] xl:w-[40%]  relative   ">
           <img src={AcidityText} alt="" className="h-[100%] absolute" />
-          <div className=" absolute acidity-text-div ">
+          <div className=" absolute acidity-text-div center-content-tr   ">
             <img
               src={Camera}
               alt=""
-              className="selfie-image w-[40%] h-[80%] camera-icon "
+              className="absolute h-[50%] w-[40%] center-content-tr"
             />
             <img
               src={TrioCircle}
               alt=""
-              className="selfie-circle"
+              className="absolute h-[100%] w-[80%] center-content-tr"
               onClick={handleCameraClick}
             />
           </div>

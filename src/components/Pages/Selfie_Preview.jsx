@@ -22,8 +22,16 @@ const Selfie_Preview = () => {
         <div className="h-[100%] w-[100%] xl:w-[40%]  relative   ">
           <img src={AcidityText} alt="" className="h-[100%] absolute" />
           <div className=" absolute acidity-text-div">
-            <img src={imageConverted} alt="" className="selfie-image" />
-            <img src={TrioCircle} alt="" className="selfie-circle" />
+            <img
+              src={imageConverted}
+              alt=""
+              className="absolute h-[70%] w-[50%] center-circle rounded-full  "
+            />
+            <img
+              src={TrioCircle}
+              alt=""
+              className="absolute h-[80%] w-[60%] center-circle"
+            />
           </div>
         </div>
       </div>

@@ -49,9 +49,6 @@ const ClickSelfi = () => {
   }, [webcamRef, navigate, uploadImage]);
 
   const webcamStyle = {
-    // width: "60%",
-    // height: "100%",
-    // borderRadius: "50%",
     objectFit: "fill",
   };
 

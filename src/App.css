@@ -7,9 +7,6 @@
 body{
   height:100%;
   width:100%;
-  /* background: url("../src/assets/images/background.png");
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 .backImage{
   background: url("../src/assets/images/background.png");
@@ -19,11 +16,6 @@ body{
 img{
   display: block;
   width: 100%;
-}
-.modalBack{
-  background: url("../src/assets/images/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .selfie-image,.selfie-circle{
    position: absolute;
@@ -54,43 +46,6 @@ img{
     font-size: 20px;
   }
 }
-
-@media screen and (max-width:400px){
-  .selfie-image,.selfie-circle{
-    height:80%;
-    margin-top: 30px;
-    margin-left: 48px;
-}}
- @media screen and (max-width:550px){
-  .selfie-image,.selfie-circle{
-    height:80%;
-    margin-top: 20px;
-    margin-left: 48px;
-}} 
- @media screen and (min-width:551px){
-  .selfie-image,.selfie-circle{
-    height: 100%;
-    width:60%;
-    margin-left: 108px;
- }
-}
-.textFieldSize{
-  width:55%;
-  height:70%;
-}
-input::-webkit-input-placeholder {
-  font-size: 26px;
-}
-.inputSize{
-   font-size: 26px;
-}
-.acidity-text-div{
-  width:80%;
-  height:50%;
-  transform: translate(-50%, -50%);
-  top:50%;
-  left:50%;
-}
 .conditionText{
    font-size: 26px;
 }
@@ -104,59 +59,15 @@ input::-webkit-input-placeholder {
     font-size: 14px;
  }
 }
-@media screen and (max-width:300px){
-  input::-webkit-input-placeholder {
-    font-size: 14px;
-  }
-}
-@media screen and (max-width:400px){
-  input::-webkit-input-placeholder {
-    font-size: 18px;
-  }
-}
 
-@media screen and (max-width:2000px){
-  .textFieldSize{
-     width: 80%;
-  }
-}
-input[type="checkbox"]{
-  width: 60px; 
-  height: 30px; 
-}
+
 @media screen and (max-width:400px){
   input[type="checkbox"]{
     width: 50px; 
     height: 30px; 
   }
 }
-.btn{
-  font-weight: 600;
-}
-@media screen and (max-width:300px){
-  .btn{
-    padding:10px 20px ;
-    font-size: 10px;
-  }
-}
-@media screen and (min-width:300px){
-  .btn{
-    padding:10px 24px ;
-    font-size: 14px;
-  }
-}
-@media screen and (min-width:500px){
-  .btn{
-    padding:16px 30px ;
-    font-size: 24px;
-  }
-}
-@media screen and (min-width:1000px){
-  .btn{
-    padding:10px 26px ;
-    font-size: 20px;
-  }
-}
+
 .camera-icon{
   position: absolute;
   transform: translate(-50%, -50%);
@@ -165,4 +76,55 @@ input[type="checkbox"]{
 
 }
 
-
+/* unique css */
+.button-design{
+  background: #007DC4;
+  color:white;
+  font-size: 20px;
+  width:38%;
+  height:90%;
+  border-radius: 8px;
+  font-weight: 600;
+  font-style:inherit;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+#submit_button[disabled]
+{
+  border: 1px solid #999999;
+  background-color: #89CFF0;
+  color: #f0f0f0;
+}
+.p-dynamic-text{
+   color:#007DC4;
+   font-size: 22px;
+   font-weight: 800;
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.center-content-flex{
+  display:flex ;
+  justify-content: center;
+  align-items: center;
+}
+.center-content-tr{
+  transform: translate(-50%, -50%);
+  top:50%;
+  left:50%;
+}
+.acidity-text-div{
+  width:80%;
+  height:50%;
+}
+.textField{
+   width:70%;
+   height:60%;
+   border-radius: 8px;
+   padding: 10px;
+   border:1.5px solid #007DC4;
+}
+  input::-webkit-input-placeholder {
+    color: red 
+  }
+  input[type="checkbox"]{
+    width: 50px; 
+    height: 25px; 
+  }

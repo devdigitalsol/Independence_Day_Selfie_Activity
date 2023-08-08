@@ -52,11 +52,8 @@ const HeroPage = () => {
           </div>
         </div>
       </div>
-      <div className="h-[6vh]  flex justify-end w-[90%]">
-        <button
-          className="btn bg-[#007DC4] text-white  rounded-lg  "
-          onClick={handleClick}
-        >
+      <div className="h-[6vh]  center-content-flex w-[90%]">
+        <button className="button-design" onClick={handleClick}>
           Next
         </button>
       </div>
