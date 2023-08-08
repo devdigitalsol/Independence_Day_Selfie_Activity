@@ -78,10 +78,10 @@ const Template = () => {
   return (
     <div className=" w-[100%] h-[100vh]  backImage" id="templateView">
       <Header />
-      <div className="h-[69vh]  flex justify-center items-center ">
+      <div className="h-[69vh]  flex justify-center items-center pt-10 ">
         <div className="h-[100%] w-[95%] ">
           <div className="h-[20%]  center-content-flex">
-            <img src={FirstText} alt="first-text" />
+            <img src={FirstText} alt="first-text h-[60%]" />
           </div>
           <div className="h-[5%]  center-content-flex ">
             <p className="p-dynamic-text">1000 times</p>
@@ -90,18 +90,18 @@ const Template = () => {
             <img src={Text2} alt="text2" />
           </div>
           <div className="h-[14%] center-content-flex">
-            <img src={Omez} alt="omez" className="w-[70%]" />
+            <img src={Omez} alt="omez" className="w-[60%]" />
           </div>
           <div className="h-[41%] relative ">
             <img
               src={imageConverted}
               alt="selfi-image"
-              className="absolute h-[90%] w-[60%] center-circle rounded-full"
+              className="absolute h-[90%] w-[60%] center-circle rounded-full left-20 "
             />
             <img
               src={TrioCircle}
               alt="flag-circle"
-              className="absolute h-[100%] w-[60%] center-circle"
+              className="absolute h-[100%] w-[60%] center-circle left-16"
             />
           </div>
           <div className="h-[15%]  center-content-flex">
@@ -123,5 +123,3 @@ const Template = () => {
   );
 };
 export default Template;
-
-
