@@ -4,6 +4,7 @@ import AcidityText from "../../assets/images/AcidityText.png";
 import TrioCircle from "../../assets/images/TrioCircle.png";
 import Camera from "../../assets/images/Camera.png";
 import { useNavigate } from "react-router-dom";
+import MyScratchCard from "../Layout/Scratch";
 
 const ClickSelfi = () => {
   const navigate = useNavigate();
@@ -17,6 +18,9 @@ const ClickSelfi = () => {
       <div className="h-[8vh]">
         <Header />
       </div>
+
+      <MyScratchCard />
+
       <div className="h-[72vh] flex justify-center items-center  ">
         <div className="h-[100%] w-[100%] xl:w-[40%]  relative   ">
           <img src={AcidityText} alt="" className="h-[100%] absolute" />
