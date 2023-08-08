@@ -8,11 +8,9 @@ import Footer from "../Layout/Footer";
 import MyScratchCard from "../Layout/Scratch";
 import React from "react";
 
-
 const ClickSelfi = () => {
   const navigate = useNavigate();
   const [visible, setVisible] = React.useState(false);
-
 
   const handleCameraClick = () => {
     navigate("/camera_open");
@@ -25,40 +23,36 @@ const ClickSelfi = () => {
   return (
     <div className=" w-[100%] h-[100vh] backImage">
       <Header />
-      
+
       <img src={AcidityText} alt="" className=" absolute" />
 
-      <div style={{
-        position: 'absolute',
-        left: '50%',
-        top: '50%',
-        transform: 'translate(-50%, -50%)'
-      }}>
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        <MyScratchCard onComplete={onCompleteScratch} />
+        <img
+          src={Camera}
+          alt=""
+          onClick={handleCameraClick}
+          className="absolute  center-content-tr"
+          style={{
+            display: visible ? "block" : "none",
+            position: "absolute",
+            top: "150px",
+            width: "200px",
+            zIndex: 2,
+          }}
+        />
 
-
-
-        {/* <img src={AcidityText} alt="" className=" absolute" />
-        <div className=" absolute acidity-text-div center-content-tr   ">
-          <img src={Camera} alt="" className="absolute  center-content-tr" />
-          <img
-            src={TrioCircle}
-            alt=""
-            className="absolute  center-content-tr"
-            onClick={handleCameraClick}
-          />
-          
-        </div>
- */}
-        <MyScratchCard onComplete={onCompleteScratch}/>
-        <img src={Camera} alt="" onClick={handleCameraClick} className="absolute  center-content-tr" style={{
-          display: visible ? 'block' : 'none',
-          position: 'absolute',
-          top: '150px',
-          width: '200px',
-          zIndex: 2
-        }}/>
-
-        <h2 className="text-center">Please slide index fingers on the above circle Life Acidity Free Life Acidity Free Life Acidity </h2>
+        <h2 className="text-center">
+          Please slide index fingers on the above circle Life Acidity Free Life
+          Acidity Free Life Acidity{" "}
+        </h2>
       </div>
       <Footer />
     </div>

@@ -17,23 +17,21 @@ const Selfie_Preview = () => {
   return (
     <div className=" w-[100%] h-[100vh] backImage">
       <Header />
-      <div className="h-[100%] w-[100%] xl:w-[40%]  relative   ">
+      <div className="h-[100%]  relative   ">
         <img src={AcidityText} alt="" className="h-[100%] absolute" />
-        <div className=" absolute acidity-text-div" style={{
-          backgroundImage: `url(${imageConverted})`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          width: '200px',
-          height: '200px',
-          borderRadius: '50%',
-          overflow: 'hidden'
-        }}>
-          
-          <img
-            src={TrioCircle}
-            alt=""
-            className="absolute h-[80%] w-[60%] center-circle"
-          />
+        <div
+          className=" absolute acidity-text-div"
+          style={{
+            backgroundImage: `url(${imageConverted})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            width: "200px",
+            height: "200px",
+            borderRadius: "50%",
+            overflow: "hidden",
+          }}
+        >
+          <img src={TrioCircle} alt="" className="absolute " />
         </div>
       </div>
       <div className="h-[6vh] bg-blue-600 flex justify-center items-center">
