@@ -18,9 +18,9 @@ const Flag_Page = () => {
         className="center-content-flex flex-col "
         style={{ height: "700px" }}
       >
-        <img src={DilliChaloText} alt="" />
-        <div className=" h-[10%] center-content-flex ">
-          <button className="button-design" onClick={handleClick}>
+        <img src={DilliChaloText} alt="" style={{pointerEvents: 'none'}}/>
+        <div style={{position: 'absolute',left: '50%', transform: 'translate(-50%, 0)', bottom: '200px'}}>
+          <button className="button-design" onClick={handleClick} >
             Next
           </button>
         </div>
@@ -31,8 +31,11 @@ const Flag_Page = () => {
           style={{
             width: "100%",
             height: "auto",
-            maxWidth: "350px",
+            maxWidth: "320px",
             bottom: "25px",
+            left: '50%',
+            transform: 'translate(-50%, 0) rotate(-5deg)',
+            pointerEvents: 'none'
           }}
         />
       </div>

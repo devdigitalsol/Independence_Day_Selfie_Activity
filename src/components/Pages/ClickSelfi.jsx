@@ -9,16 +9,26 @@ import MyScratchCard from "../Layout/Scratch";
 
 const ClickSelfi = () => {
   const navigate = useNavigate();
+  let scratchComplete = true;
 
   const handleCameraClick = () => {
     navigate("/camera_open");
   };
 
+  const onCompleteScratch = () => {
+    scratchComplete = true;
+  };
+
   return (
     <div className=" w-[100%] h-[100vh] backImage">
       <Header />
-      <div className="center-content-flex ">
-        <img src={AcidityText} alt="" className=" absolute" />
+      <div style={{
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)'
+      }}>
+        {/* <img src={AcidityText} alt="" className=" absolute" />
         <div className=" absolute acidity-text-div center-content-tr   ">
           <img src={Camera} alt="" className="absolute  center-content-tr" />
           <img
@@ -27,7 +37,19 @@ const ClickSelfi = () => {
             className="absolute  center-content-tr"
             onClick={handleCameraClick}
           />
+          
         </div>
+ */}
+        <MyScratchCard onComplete={onCompleteScratch}/>
+        <img src={Camera} alt="" onClick={handleCameraClick} className="absolute  center-content-tr" style={{
+          display: scratchComplete ? 'block' : 'none',
+          position: 'absolute',
+          top: '150px',
+          width: '200px',
+          zIndex: 2
+        }}/>
+
+        <h2 className="text-center">Please slide index fingers on the above circle Life Acidity Free Life Acidity Free Life Acidity </h2>
       </div>
       <Footer />
     </div>

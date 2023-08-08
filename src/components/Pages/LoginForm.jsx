@@ -140,7 +140,7 @@ const LoginForm = () => {
                 type="submit"
                 disabled={!isValid}
                 id="submit_button"
-                className="button-design  bg-[#007DC4] h-[50%] w-[45%] "
+                className="button-design  bg-[#007DC4]"
               >
                 SUBMIT
               </button>

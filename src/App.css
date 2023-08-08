@@ -82,9 +82,9 @@ img{
   background: #007DC4;
   color:white;
   font-size: 20px;
-  width:38%;
-  height:90%;
+  width:160px;
   border-radius: 8px;
+  padding: 10px;
   font-weight: 600;
   font-style:inherit;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
