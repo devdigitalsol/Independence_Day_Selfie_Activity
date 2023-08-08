@@ -49,7 +49,14 @@ const ClickSelfi = () => {
     await uploadImage(imageSrc);
   }, [webcamRef, navigate, uploadImage]);
 
-  const webcamStyle = {};
+  const webcamStyle = {
+    height: '100%',
+    width: 'auto',
+    position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+  };
 
   return (
     <div className="w-[100%] h-[100vh] backImage">
@@ -63,13 +70,21 @@ const ClickSelfi = () => {
           transform: "translate(-50%, -50%)",
         }}
       >
-        <div
+        
+
+        <img src={TrioCircle} alt="" />
+      </div>
+
+      <div
           style={{
             position: "absolute",
             left: "50%",
             top: "50%",
             transform: "translate(-50%, -50%)",
             borderRadius: "50%",
+            width: '150px',
+            height: '150px',
+            overflow: 'hidden'
           }}
         >
           <Webcam
@@ -77,20 +92,18 @@ const ClickSelfi = () => {
             height={720}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
-            width={1280}
+            width={720}
             videoConstraints={videoConstraints}
             style={webcamStyle}
           />
         </div>
 
-        <img src={TrioCircle} alt="" />
-      </div>
-      <button
+      {/* <button
         className="btn bg-[#007DC4] text-white  rounded-lg "
         onClick={capture}
       >
         Click
-      </button>
+      </button> */}
       {/* <div
         className="center-content-flex bg-red-300  "
         style={{ height: "500px" }}
