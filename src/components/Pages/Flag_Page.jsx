@@ -19,7 +19,6 @@ const Flag_Page = () => {
       <div className="h-[72vh]    ">
         <div className="h-[100%] w-[100%] relative  ">
           <img src={DilliChaloText} alt="" className=" h-[90%] " />
-          {/* <img src={FlagGif} alt="" className="absolute " /> */}
 
           <div className=" h-[10%] center-content-flex   ">
             <button className="button-design" onClick={handleClick}>
@@ -27,8 +26,12 @@ const Flag_Page = () => {
             </button>
           </div>
         </div>
+        <img
+          src={FlagGif}
+          alt=""
+          className="absolute bottom-0 h-[85%] w-[70%] left-16"
+        />
       </div>
-      {/* <img src={FlagGif} alt="" className="flagImage-relative" /> */}
 
       {/* footer */}
       <div className="h-[20vh]  relative">
