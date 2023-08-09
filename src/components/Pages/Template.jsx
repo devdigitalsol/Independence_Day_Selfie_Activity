@@ -100,8 +100,8 @@ const Template = () => {
             <div className="relative ">
               <div
                 style={{
-                  width: "150px",
-                  height: "150px",
+                  width: "115px",
+                  height: "115px",
                   left: "50%",
                   top: "50%",
                   transform: "translate(-50%, -50%)",
