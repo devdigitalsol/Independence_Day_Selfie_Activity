@@ -8,6 +8,8 @@ import Webcam from "react-webcam";
 import axios from "axios";
 import Footer from "../Layout/Footer";
 import MyScratchCard from "../Layout/Scratch";
+import { Buffer } from "buffer";
+
 
 const videoConstraints = {
   width: 1280,
@@ -31,15 +33,15 @@ const ClickSelfi = () => {
   };
 
   const uploadImage = async (imageSrc) => {
-    let strImage = imageSrc.replace(/^data:image\/[a-z]+;base64,/, "");
     let formData = new FormData();
-    
-    const file = new File([imageSrc], "imageSrc.jpeg");
-    formData.append('upload_file', file); 
+    const blob = await fetch(imageSrc).then((res) => res.blob());
+
+    formData.append('upload_file', blob); 
     
     const headers = {
       HTTP_SECRETKEY: "ae9e762a",
       "Access-Control-Allow-Origin": "*",
+      'content-type': 'multipart/form-data'
     };
 
     try {
