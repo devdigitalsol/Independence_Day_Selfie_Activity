@@ -14,7 +14,10 @@ import Footer from "../Layout/Footer";
 
 const Template = () => {
   const [loading, setLoading] = useState(false);
+  const [download, setDownload] = useState(false);
+
   const { userData } = useUserContext();
+
 
   const location = useLocation();
   const imageConverted = location.state;
@@ -47,6 +50,7 @@ const Template = () => {
         console.log(error);
       });
 
+      setDownload(true);
     html2canvas(document.getElementById("templateView"), {
       allowTaint: true,
       useCORS: true,
@@ -67,6 +71,7 @@ const Template = () => {
         document.body.appendChild(link);
         link.click();
         setLoading(false);
+        
       })
       .catch(function (error) {
         setLoading(false);
@@ -132,7 +137,9 @@ const Template = () => {
           </div>
         </div>
       </div>
-      <div className=" flex justify-center items-center  ">
+      <div className=" flex justify-center items-center" style={{
+        display: download ? 'none' : 'flex'
+      }}>
         <button
           className="button-design"
           onClick={downLoadPoster}
