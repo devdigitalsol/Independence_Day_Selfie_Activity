@@ -29,16 +29,15 @@ const ClickSelfi = () => {
   };
 
   const uploadImage = async (imageSrc) => {
-    let strImage = imageSrc.replace(/^data:image\/[a-z]+;base64,/, "");
-    console.log(imageSrc, "img ");
     let formData = new FormData();
+    const blob = await fetch(imageSrc).then((res) => res.blob());
 
-    const file = new File([imageSrc], "imageSrc.jpeg");
-    formData.append("upload_file", file);
+    formData.append("upload_file", blob);
 
     const headers = {
       HTTP_SECRETKEY: "ae9e762a",
       "Access-Control-Allow-Origin": "*",
+      "content-type": "multipart/form-data",
     };
 
     try {
