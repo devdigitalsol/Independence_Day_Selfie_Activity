@@ -1,4 +1,3 @@
-import FooterImg from "../../assets/images/Bottom Flag Img.png";
 import Omez from "../../assets/images/Text2.png";
 import TrioCircle from "../../assets/images/TrioCircle.png";
 import html2canvas from "html2canvas";
@@ -36,7 +35,6 @@ const Template = () => {
     };
     const headers = {
       HTTP_SECRETKEY: "ae9e762a",
-      // Content_Type: "application/json",
       "Access-Control-Allow-Origin": "*",
     };
 
@@ -99,14 +97,6 @@ const Template = () => {
             <img src={Omez} alt="omez" className="w-[60%]" />
           </div>
           <div className="relative ">
-            {/* <img
-              src={imageConverted}
-              alt="selfi-image"
-              className="absolute h-[90%] w-[50%] center-circle rounded-full left-20 "
-            />
-              className="absolute w-[60%] center-circle rounded-full left-20 "
-            /> */}
-
             <div
               style={{
                 width: "150px",
