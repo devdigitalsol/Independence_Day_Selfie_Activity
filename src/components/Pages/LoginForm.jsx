@@ -7,6 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../context/UserContext";
+import { useAuth } from "../context/AuthContext";
 import Footer from "../Layout/Footer";
 
 const schema = yup
@@ -46,17 +47,19 @@ const LoginForm = () => {
   });
 
   const { setUserData } = useUserContext();
+  const { setAuthenticated } = useAuth();
 
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
     setUserData(data);
+    setAuthenticated(true);
     navigate("/flagpage");
   };
 
   const handleBlur = () => {
     document.body.scrollTop = 0;
-    document.getElementsByClassName('backImage').scrollTop = 0;
+    document.getElementsByClassName("backImage").scrollTop = 0;
   };
 
   const [modalOpen, setModalOpen] = useState(false);
