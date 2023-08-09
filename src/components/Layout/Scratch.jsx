@@ -8,8 +8,8 @@ const MyScratchCard = (props) => {
   return (
     <div>
       <ScratchCard
-        width={180}
-        height={180}
+        width={300}
+        height={300}
         image={IMG}
         finishPercent={90}
         onComplete={props.onComplete}

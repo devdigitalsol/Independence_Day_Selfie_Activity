@@ -18,7 +18,18 @@ const Selfie_Preview = () => {
     <div className=" w-[100%] h-[100vh] backImage">
       <Header />
 
-      <img src={AcidityText} alt="" className=" absolute" />
+      {/* <img src={AcidityText} alt="" className=" absolute" />
+      <img src={AcidityText} alt="" className=" absolute" /> */}
+      <div style={{
+        position: 'absolute',
+        backgroundImage: `url(${AcidityText})`,
+        height: '100%',
+        width: '100%',
+        zIndex: '0',
+        backgroundSize: '100% auto'
+      }}>
+
+      </div>
 
       <div
         style={{
@@ -26,6 +37,7 @@ const Selfie_Preview = () => {
           left: "50%",
           top: "50%",
           transform: "translate(-50%, -50%)",
+          width: '300px'
         }}
       >
         <img
@@ -36,8 +48,8 @@ const Selfie_Preview = () => {
             position: "absolute",
             top: "50%",
             width: "50%",
-            height: "160px",
-            width: "160px",
+            height: "233px",
+            width: "233px",
             borderRadius: "50%",
             left: "50%",
           }}
@@ -50,7 +62,7 @@ const Selfie_Preview = () => {
             left: "50%",
             top: "50%",
             transform: "translate(-50%, -50%)",
-            marginTop: "150px",
+            marginTop: "200px",
           }}
         >
           <button

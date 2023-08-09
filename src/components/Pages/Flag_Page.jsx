@@ -19,6 +19,9 @@ const Flag_Page = () => {
         style={{ height: "700px" }}
       >
         <img src={DilliChaloText} alt="" style={{pointerEvents: 'none'}}/>
+        <img src={DilliChaloText} alt="" style={{pointerEvents: 'none'}}/>
+        <img src={DilliChaloText} alt="" style={{pointerEvents: 'none'}}/>
+        <img src={DilliChaloText} alt="" style={{pointerEvents: 'none'}}/>
         <div style={{position: 'absolute',left: '50%', transform: 'translate(-50%, 0)', bottom: '200px'}}>
           <button className="button-design" onClick={handleClick} >
             Next

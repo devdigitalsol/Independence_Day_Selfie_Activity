@@ -82,26 +82,26 @@ const Template = () => {
         <Header />
         <div className="flex justify-center items-center pt-10 ">
           <div className="w-[95%] ">
-            <div className="center-content-flex">
+            <div className="center-content-flex" style={{marginTop: '5px'}}>
               <img src={FirstText} alt="first-text h-[60%]" />
             </div>
-            <div className="center-content-flex ">
+            <div className="center-content-flex " style={{marginTop: '5px'}}>
               <p className="p-dynamic-text">
                 {userData.noOfPatientsDaily * userData.noOfYearsPractice * 365}{" "}
                 times
               </p>
             </div>
-            <div className="center-content-flex">
+            <div className="center-content-flex" style={{marginTop: '5px'}}>
               <img src={Text2} alt="text2" />
             </div>
-            <div className="center-content-flex">
+            <div className="center-content-flex" style={{marginTop: '5px'}}>
               <img src={Omez} alt="omez" className="w-[60%]" />
             </div>
-            <div className="relative ">
+            <div className="relative " style={{marginTop: '5px'}}>
               <div
                 style={{
-                  width: "115px",
-                  height: "115px",
+                  width: "180px",
+                  height: "180px",
                   left: "50%",
                   top: "50%",
                   transform: "translate(-50%, -50%)",
@@ -118,7 +118,7 @@ const Template = () => {
                 src={TrioCircle}
                 alt="flag-circle"
                 style={{
-                  width: "150px",
+                  width: "220px",
                   height: "auto",
                   left: "50%",
                   transform: "translate(-50%, 0)",
@@ -126,7 +126,7 @@ const Template = () => {
                 }}
               />
             </div>
-            <div className="center-content-flex">
+            <div className="center-content-flex" style={{marginTop: '5px'}}>
               <img src={Text3} alt="Text3" className="w-[80%]" />
             </div>
           </div>

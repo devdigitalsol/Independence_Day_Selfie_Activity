@@ -91,6 +91,15 @@ const ClickSelfi = () => {
     <div className="w-[100%] h-[100vh] backImage">
       <Header />
 
+      <div style={{
+        position: 'absolute',
+        backgroundImage: `url(${AcidityText})`,
+        height: '100%',
+        width: '100%',
+        zIndex: '0',
+        backgroundSize: '100% auto'
+      }}></div>
+
       <div
         style={{
           position: "absolute",
@@ -111,8 +120,8 @@ const ClickSelfi = () => {
           top: "50%",
           transform: "translate(-50%, -50%)",
           borderRadius: "50%",
-          width: "150px",
-          height: "150px",
+          width: "250px",
+          height: "250px",
           overflow: "hidden",
           pointerEvents: "none",
         }}
@@ -129,8 +138,8 @@ const ClickSelfi = () => {
 
         <div
           style={{
-            width: "150px",
-            height: "150px",
+            width: "250px",
+            height: "250px",
             left: "50%",
             top: "50%",
             transform: "translate(-50%, -50%)",
@@ -152,7 +161,7 @@ const ClickSelfi = () => {
           left: "50%",
           top: "50%",
           transform: "translate(-50%, -50%)",
-          marginTop: "150px",
+          marginTop: "200px",
           maxWidth: "90%",
           wordWrap: "break-word",
           textAlign: "center",
