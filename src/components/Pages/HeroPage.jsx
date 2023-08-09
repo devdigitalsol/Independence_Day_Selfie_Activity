@@ -14,7 +14,7 @@ const HeroPage = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/click_selfi");
+    navigate("/camera_open");
   };
 
   return (

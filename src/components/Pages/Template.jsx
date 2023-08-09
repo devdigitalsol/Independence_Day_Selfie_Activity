@@ -106,7 +106,7 @@ const Template = () => {
                   top: "50%",
                   transform: "translate(-50%, -50%)",
                   position: "absolute",
-                  backgroundImage: `url(data:image/png;base64,${imageConverted})`,
+                  backgroundImage: `url(${imageConverted})`,
                   borderRadius: "50%",
                   overflow: "hidden",
                   backgroundPosition: "center",

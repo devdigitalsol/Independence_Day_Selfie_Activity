@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
 import axios from "axios";
 import Footer from "../Layout/Footer";
+import MyScratchCard from "../Layout/Scratch";
 
 const videoConstraints = {
   width: 1280,
@@ -19,6 +20,13 @@ const ClickSelfi = () => {
   const webcamRef = useRef(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState("");
+  const [imageSrc, setImageSrc] = React.useState("");
+
+  const onCompleteScratch = () => {
+    setTimeout(() => {
+      navigate("/selfie-preview", { state: imageSrc });
+    }, 1000);
+  };
 
   const uploadImage = async (imageSrc) => {
     let strImage = imageSrc.replace(/^data:image\/[a-z]+;base64,/, "");
@@ -39,9 +47,13 @@ const ClickSelfi = () => {
           },
         }
       );
-      if (resp.status === 215) {
-        setError(resp.data.msg);
+      console.log(resp);
+
+      if (resp.data.status == 200) {
+        const imageConverted = resp?.data?.filename;
+        setImageSrc(imageConverted);
         setLoading(false);
+        // navigate("/selfie-preview", { state: imageConverted });
         return;
       }
       console.log(resp);
@@ -60,6 +72,7 @@ const ClickSelfi = () => {
     }
     setLoading(true);
     const imageSrc = webcamRef.current.getScreenshot();
+    setImageSrc(imageSrc);
     await uploadImage(imageSrc);
   }, [webcamRef, navigate, uploadImage]);
 
@@ -83,9 +96,11 @@ const ClickSelfi = () => {
           left: "50%",
           top: "50%",
           transform: "translate(-50%, -50%)",
+          pointerEvents: imageSrc ? "" : "none",
         }}
       >
-        <img src={TrioCircle} alt="" />
+        {/* <img src={TrioCircle} alt="" /> */}
+        <MyScratchCard onComplete={onCompleteScratch} />
       </div>
 
       <div
@@ -98,6 +113,7 @@ const ClickSelfi = () => {
           width: "150px",
           height: "150px",
           overflow: "hidden",
+          pointerEvents: "none",
         }}
       >
         <Webcam
@@ -109,6 +125,24 @@ const ClickSelfi = () => {
           videoConstraints={videoConstraints}
           style={webcamStyle}
         />
+
+        <div
+          style={{
+            width: "150px",
+            height: "150px",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
+            position: "absolute",
+            backgroundImage: `url(${imageSrc})`,
+            borderRadius: "50%",
+            overflow: "hidden",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            display: imageSrc ? "block" : "none",
+            zIndex: 1,
+          }}
+        ></div>
       </div>
 
       <div
@@ -123,12 +157,19 @@ const ClickSelfi = () => {
         <button
           className="btn bg-[#007DC4] text-white  rounded-lg "
           disabled={loading}
-          style={{ padding: "10px 50px" }}
+          style={{
+            padding: "10px 50px",
+            display: imageSrc && !loading ? "none" : "flex",
+          }}
           onClick={capture}
         >
           {loading ? "Please Wait" : "Capture"}
         </button>
         <p>{error}</p>
+        <p style={{ display: imageSrc && !loading ? "block" : "none" }}>
+          Please slide index fingers on the above circle Life Acidity Free Life
+          Acidity Free Life Acidity
+        </p>
       </div>
 
       {/* <button
