@@ -29,7 +29,7 @@ const Selfie_Preview = () => {
         }}
       >
         <img
-          src={'data:image/png;base64, ' + imageConverted}
+          src={imageConverted}
           alt=""
           className="absolute  center-content-tr"
           style={{
