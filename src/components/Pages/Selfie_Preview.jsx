@@ -29,7 +29,7 @@ const Selfie_Preview = () => {
         }}
       >
         <img
-          src="https://t3.ftcdn.net/jpg/01/42/01/94/360_F_142019435_7dkP5kN3FaVTlsp7v9w31R8O21CA5aB3.jpg"
+          src={imageConverted}
           alt=""
           className="absolute  center-content-tr"
           style={{

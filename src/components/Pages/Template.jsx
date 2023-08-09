@@ -96,7 +96,7 @@ const Template = () => {
             <img
               src={imageConverted}
               alt="selfi-image"
-              className="absolute h-[90%] w-[60%] center-circle rounded-full left-20 "
+              className="absolute h-[90%] w-[50%] center-circle rounded-full left-20 "
             />
             <img
               src={TrioCircle}
