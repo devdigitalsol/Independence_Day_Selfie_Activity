@@ -1,4 +1,3 @@
-import Header from "../Layout/Header";
 import FooterImg from "../../assets/images/Bottom Flag Img.png";
 import Omez from "../../assets/images/Text2.png";
 import TrioCircle from "../../assets/images/TrioCircle.png";
@@ -14,6 +13,8 @@ import Footer from "../Layout/Footer";
 
 const Template = () => {
   const [loading, setLoading] = useState(false);
+  const [download, setDownload] = useState(false);
+
   const { userData } = useUserContext();
 
   const location = useLocation();
@@ -47,6 +48,7 @@ const Template = () => {
         console.log(error);
       });
 
+    setDownload(true);
     html2canvas(document.getElementById("templateView"), {
       allowTaint: true,
       useCORS: true,
@@ -78,42 +80,76 @@ const Template = () => {
   return (
     <div className=" w-[100%] h-[100vh]  backImage" id="templateView">
       <Header />
-      <div className="h-[69vh]  flex justify-center items-center pt-10 ">
-        <div className="h-[100%] w-[95%] ">
-          <div className="h-[20%]  center-content-flex">
+      <div className="flex justify-center items-center pt-10 ">
+        <div className="w-[95%] ">
+          <div className="center-content-flex">
             <img src={FirstText} alt="first-text h-[60%]" />
           </div>
-          <div className="h-[5%]  center-content-flex ">
-            <p className="p-dynamic-text">1000 times</p>
+          <div className="center-content-flex ">
+            <p className="p-dynamic-text">
+              {userData.noOfPatientsDaily * userData.noOfYearsPractice * 365}{" "}
+              times
+            </p>
           </div>
-          <div className="h-[5%] center-content-flex">
+          <div className="center-content-flex">
             <img src={Text2} alt="text2" />
           </div>
-          <div className="h-[14%] center-content-flex">
+          <div className="center-content-flex">
             <img src={Omez} alt="omez" className="w-[60%]" />
           </div>
-          <div className="h-[41%] relative ">
-            <img
+          <div className="relative ">
+            {/* <img
               src={imageConverted}
               alt="selfi-image"
               className="absolute h-[90%] w-[50%] center-circle rounded-full left-20 "
             />
+              className="absolute w-[60%] center-circle rounded-full left-20 "
+            /> */}
+
+            <div
+              style={{
+                width: "150px",
+                height: "150px",
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%, -50%)",
+                position: "absolute",
+                backgroundImage: `url(${imageConverted})`,
+                borderRadius: "50%",
+                overflow: "hidden",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+              }}
+            ></div>
+
             <img
               src={TrioCircle}
               alt="flag-circle"
-              className="absolute h-[100%] w-[60%] center-circle left-16"
+              style={{
+                width: "150px",
+                height: "auto",
+                left: "50%",
+                transform: "translate(-50%, 0)",
+                position: "relative",
+              }}
             />
           </div>
-          <div className="h-[15%]  center-content-flex">
+          <div className="center-content-flex">
             <img src={Text3} alt="Text3" className="w-[80%]" />
           </div>
         </div>
       </div>
-      <div className="h-[6vh]  flex justify-center items-center  ">
+      <div
+        className=" flex justify-center items-center"
+        style={{
+          display: download ? "none" : "flex",
+        }}
+      >
         <button
           className="button-design"
           onClick={downLoadPoster}
           disabled={loading}
+          style={{ marginTop: "10px" }}
         >
           Download
         </button>
