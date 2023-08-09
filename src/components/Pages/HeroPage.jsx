@@ -18,11 +18,9 @@ const HeroPage = () => {
   };
 
   return (
-    <div className=" w-[100%] h-[100vh] backImage" style={{overflow: 'auto',padding: '0 0 140px 0'}}>
+    <div className=" w-[100%] h-[100vh] backImage" style={{overflow: 'auto',padding: '0 0 100px 0'}}>
       <Header />
-      <div className="flex justify-center items-center ">
-        <div className="pb-4">
-          <div className="  relative" style={{width: '390px', height: '590px', margin: '40px auto 0 auto'}}>
+      <div className="  relative" style={{width: '390px', height: '590px', margin: '-40px auto 0 auto', transform: 'scale(.7)'}}>
             <img src={BackFlag} alt="" className="absolute mt-40  " />
             {/* div's for animation */}
             <div className="h-[100%] w-[100%]">
@@ -46,13 +44,11 @@ const HeroPage = () => {
             </div>
             {/*  div's close */}
           </div>
-          <div className="flex justify-center items-center animated fadeInLeft" style={{marginTop: '-60px'}}>
+          <div className="flex justify-center items-center animated fadeInLeft" style={{marginTop: '-130px'}}>
             <img src={HeroText} alt="" className="w-[80%] h-[120%]" />
           </div>
-        </div>
-      </div>
       <div className=" center-content-flex">
-        <button className="button-design" onClick={handleClick}>
+        <button className="button-design" onClick={handleClick} style={{marginTop: '10px'}}>
           Next
         </button>
       </div>
