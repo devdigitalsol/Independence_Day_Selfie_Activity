@@ -8,6 +8,7 @@ import HeroPage from "./components/Pages/HeroPage";
 import Selfie_Preview from "./components/Pages/Selfie_Preview";
 import CameraOpen from "./components/Pages/CameraOpen";
 import { AuthProvider } from "./components/context/AuthContext";
+import AdminPage from "./components/Pages/AdminPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/selfie-preview" element={<Selfie_Preview />} />
           <Route path="/heropage" element={<HeroPage />} />
           <Route path="/camera_open" element={<CameraOpen />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

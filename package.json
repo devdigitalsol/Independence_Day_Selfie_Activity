@@ -20,8 +20,10 @@
     "react-router-dom": "^6.14.2",
     "react-scratchcard": "^1.1.2",
     "react-scratchcard-v2": "^1.1.1",
+    "react-data-table-component-with-filter": "^7.5.3",
     "react-webcam": "^7.1.1",
-    "yup": "^1.2.0"
+    "yup": "^1.2.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
