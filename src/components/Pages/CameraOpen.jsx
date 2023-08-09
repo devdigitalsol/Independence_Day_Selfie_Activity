@@ -22,32 +22,34 @@ const ClickSelfi = () => {
   const [error, setError] = React.useState("");
   const [imageSrc, setImageSrc] = React.useState("");
 
+
   const onCompleteScratch = () => {
     setTimeout(() => {
       navigate("/selfie-preview", { state: imageSrc });
     }, 1000);
+    
   };
 
   const uploadImage = async (imageSrc) => {
     let strImage = imageSrc.replace(/^data:image\/[a-z]+;base64,/, "");
+    let formData = new FormData();
+    
+    const file = new File([imageSrc], "imageSrc.jpeg");
+    formData.append('upload_file', file); 
+    
+    const headers = {
+      HTTP_SECRETKEY: "ae9e762a",
+      "Access-Control-Allow-Origin": "*",
+    };
+
     try {
       const resp = await axios.post(
-        `https://3d-cartoon-face.p.rapidapi.com/run`,
+        `https://vps.solmc.in/caricature/index.php`,
+        formData,
         {
-          image: strImage,
-          render_mode: "anime",
-          output_mode: "base64",
-        },
-        {
-          headers: {
-            "content-type": "application/json",
-            "X-RapidAPI-Key":
-              "3e31858802mshdb353e945e71814p1ebd9djsnd7bcd3f8ca9f",
-            "X-RapidAPI-Host": "3d-cartoon-face.p.rapidapi.com",
-          },
+          headers
         }
-      );
-      console.log(resp);
+      );      
 
       if (resp.data.status == 200) {
         const imageConverted = resp?.data?.filename;
@@ -56,9 +58,10 @@ const ClickSelfi = () => {
         // navigate("/selfie-preview", { state: imageConverted });
         return;
       }
-      console.log(resp);
-      const imageConverted = resp?.data?.output_base64;
-      navigate("/selfie-preview", { state: imageConverted });
+      
+      setError(resp.data.message);
+      
+      // navigate("/selfie-preview", { state: imageConverted });
     } catch (error) {
       setError(error);
       setLoading(false);
@@ -72,7 +75,7 @@ const ClickSelfi = () => {
     }
     setLoading(true);
     const imageSrc = webcamRef.current.getScreenshot();
-    setImageSrc(imageSrc);
+    setImageSrc(imageSrc)
     await uploadImage(imageSrc);
   }, [webcamRef, navigate, uploadImage]);
 
@@ -96,7 +99,7 @@ const ClickSelfi = () => {
           left: "50%",
           top: "50%",
           transform: "translate(-50%, -50%)",
-          pointerEvents: imageSrc ? "" : "none",
+          pointerEvents: imageSrc ? '' : 'none'
         }}
       >
         {/* <img src={TrioCircle} alt="" /> */}
@@ -113,7 +116,7 @@ const ClickSelfi = () => {
           width: "150px",
           height: "150px",
           overflow: "hidden",
-          pointerEvents: "none",
+          pointerEvents: 'none'
         }}
       >
         <Webcam
@@ -126,23 +129,23 @@ const ClickSelfi = () => {
           style={webcamStyle}
         />
 
-        <div
-          style={{
-            width: "150px",
-            height: "150px",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)",
-            position: "absolute",
-            backgroundImage: `url(${imageSrc})`,
-            borderRadius: "50%",
-            overflow: "hidden",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            display: imageSrc ? "block" : "none",
-            zIndex: 1,
-          }}
-        ></div>
+            <div
+                style={{
+                  width: "150px",
+                  height: "150px",
+                  left: "50%",
+                  top: "50%",
+                  transform: "translate(-50%, -50%)",
+                  position: "absolute",
+                  backgroundImage: `url(${imageSrc})`,
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                  display: imageSrc ? 'block' : 'none',
+                  zIndex: 1
+                }}
+              ></div>
       </div>
 
       <div
@@ -152,24 +155,21 @@ const ClickSelfi = () => {
           top: "50%",
           transform: "translate(-50%, -50%)",
           marginTop: "150px",
+          maxWidth: '90%',
+          wordWrap: 'break-word',
+          textAlign: 'center'
         }}
       >
         <button
           className="btn bg-[#007DC4] text-white  rounded-lg "
           disabled={loading}
-          style={{
-            padding: "10px 50px",
-            display: imageSrc && !loading ? "none" : "flex",
-          }}
+          style={{ padding: "10px 50px", display: imageSrc && !loading ? 'none' : 'inline'}}
           onClick={capture}
         >
           {loading ? "Please Wait" : "Capture"}
         </button>
         <p>{error}</p>
-        <p style={{ display: imageSrc && !loading ? "block" : "none" }}>
-          Please slide index fingers on the above circle Life Acidity Free Life
-          Acidity Free Life Acidity
-        </p>
+        <p style={{ display: imageSrc && !loading ? 'block' : 'none'}}>Please slide index fingers on the above circle Life Acidity Free Life Acidity Free Life Acidity</p>
       </div>
 
       {/* <button
