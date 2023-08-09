@@ -156,6 +156,10 @@ const Template = () => {
         </button>
       </div>
       <Footer />
+      <p className="text-[6px] absolute bottom-1 right-12  w-[40%]">
+        GGI-CO-A1-AQS-300027513-AM-G23-0684 * Creative expression For the use of
+        registered medical practitioners, hospitals or laboratories only.
+      </p>
     </div>
   );
 };
