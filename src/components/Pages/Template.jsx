@@ -19,7 +19,7 @@ const Template = () => {
 
   const location = useLocation();
   const imageConverted = location.state;
-  console.log(imageConverted, "image url");
+  // console.log(imageConverted, "image url");
 
   const downLoadPoster = () => {
     setLoading(true);
@@ -29,8 +29,8 @@ const Template = () => {
       operation: "save_doctor_info",
       emp_id: userData.employeeCode,
       doctor_name: userData.employeeName,
-      years_of_practice: userData.noOfYearsPractice.toString(),
-      pts_treated_daily: userData.noOfPatientsDaily.toString(),
+      years_of_practice: userData.noOfYearsPractice?.toString(),
+      pts_treated_daily: userData.noOfPatientsDaily?.toString(),
       media_path: imageConverted,
     };
     const headers = {
@@ -99,17 +99,18 @@ const Template = () => {
           <div className="relative ">
             <div
               style={{
-                width: "150px",
-                height: "150px",
+                width: "118px",
+                height: "118px",
                 left: "50%",
                 top: "50%",
                 transform: "translate(-50%, -50%)",
                 position: "absolute",
-                backgroundImage: `url(${imageConverted})`,
+                backgroundImage: `url(data:image/png;base64,${imageConverted})`,
                 borderRadius: "50%",
                 overflow: "hidden",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
+                zIndex: 10
               }}
             ></div>
 

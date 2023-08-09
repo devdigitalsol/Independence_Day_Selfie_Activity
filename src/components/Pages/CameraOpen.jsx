@@ -28,7 +28,7 @@ const ClickSelfi = () => {
         {
           image: strImage,
           render_mode: "anime",
-          output_mode: "url",
+          output_mode: "base64",
         },
         {
           headers: {
@@ -44,7 +44,8 @@ const ClickSelfi = () => {
         setLoading(false);
         return;
       }
-      const imageConverted = resp?.data?.output_url;
+      console.log(resp);
+      const imageConverted = resp?.data?.output_base64;
       navigate("/selfie-preview", { state: imageConverted });
     } catch (error) {
       setError(error);
