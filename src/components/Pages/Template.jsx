@@ -84,7 +84,7 @@ const Template = () => {
             <img src={FirstText} alt="first-text h-[60%]" />
           </div>
           <div className="center-content-flex ">
-            <p className="p-dynamic-text">1000 times</p>
+            <p className="p-dynamic-text">{userData.noOfPatientsDaily * userData.noOfYearsPractice * 365} times</p>
           </div>
           <div className="center-content-flex">
             <img src={Text2} alt="text2" />
