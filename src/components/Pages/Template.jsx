@@ -57,6 +57,10 @@ const Template = () => {
       onrendered: function (canvas) {
         document.body.appendChild(canvas);
         window.scrollTo(0, 0);
+        const buttonWrapper = canvas.querySelector("#download-button-wrapper");
+        if (buttonWrapper) {
+          buttonWrapper.parentNode.removeChild(buttonWrapper);
+        }
       },
     })
       .then(async (canvas) => {
@@ -131,7 +135,8 @@ const Template = () => {
         </div>
       </div>
       <div
-        className=" flex justify-center items-center"
+        className=" flex justify-center items-center "
+        id="download-button-wrapper"
         style={{
           display: download ? "none" : "flex",
         }}

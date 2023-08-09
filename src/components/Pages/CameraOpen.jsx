@@ -18,7 +18,7 @@ const ClickSelfi = () => {
   const navigate = useNavigate();
   const webcamRef = useRef(null);
   const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState('');
+  const [error, setError] = React.useState("");
 
   const uploadImage = async (imageSrc) => {
     let strImage = imageSrc.replace(/^data:image\/[a-z]+;base64,/, "");
@@ -34,7 +34,7 @@ const ClickSelfi = () => {
           headers: {
             "content-type": "application/json",
             "X-RapidAPI-Key":
-              "0e0787dec1mshff15b713adeeda3p109951jsn11a9e6d0a7f4",
+              "3e31858802mshdb353e945e71814p1ebd9djsnd7bcd3f8ca9f",
             "X-RapidAPI-Host": "3d-cartoon-face.p.rapidapi.com",
           },
         }
@@ -54,7 +54,7 @@ const ClickSelfi = () => {
   };
 
   const capture = useCallback(async () => {
-    setError('');
+    setError("");
     if (loading) {
       return;
     }
@@ -64,13 +64,13 @@ const ClickSelfi = () => {
   }, [webcamRef, navigate, uploadImage]);
 
   const webcamStyle = {
-    height: '100%',
-    width: 'auto',
+    height: "100%",
+    width: "auto",
     position: "absolute",
     left: "50%",
     top: "50%",
     transform: "translate(-50%, -50%)",
-    maxWidth: '1000%'
+    maxWidth: "1000%",
   };
 
   return (
@@ -85,53 +85,51 @@ const ClickSelfi = () => {
           transform: "translate(-50%, -50%)",
         }}
       >
-        
-
         <img src={TrioCircle} alt="" />
       </div>
 
       <div
-          style={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)",
-            borderRadius: "50%",
-            width: '150px',
-            height: '150px',
-            overflow: 'hidden'
-          }}
-        >
-          <Webcam
-            audio={false}
-            height={720}
-            ref={webcamRef}
-            screenshotFormat="image/jpeg"
-            width={720}
-            videoConstraints={videoConstraints}
-            style={webcamStyle}
-          />
-        </div>
-
-        <div style={{
-          position: 'absolute',
+        style={{
+          position: "absolute",
           left: "50%",
           top: "50%",
           transform: "translate(-50%, -50%)",
-          marginTop: '150px'
-        }}>
-          <button
-            className="btn bg-[#007DC4] text-white  rounded-lg "
-            disabled={loading}
-            style={{padding: '10px 50px'}}
-            onClick={capture}
-          >
-            {loading ? 'Please Wait' : 'Capture'}
-          </button> 
-          <p>{error}</p>
-        </div>
+          borderRadius: "50%",
+          width: "150px",
+          height: "150px",
+          overflow: "hidden",
+        }}
+      >
+        <Webcam
+          audio={false}
+          height={720}
+          ref={webcamRef}
+          screenshotFormat="image/jpeg"
+          width={720}
+          videoConstraints={videoConstraints}
+          style={webcamStyle}
+        />
+      </div>
 
-        
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+          marginTop: "150px",
+        }}
+      >
+        <button
+          className="btn bg-[#007DC4] text-white  rounded-lg "
+          disabled={loading}
+          style={{ padding: "10px 50px" }}
+          onClick={capture}
+        >
+          {loading ? "Please Wait" : "Capture"}
+        </button>
+        <p>{error}</p>
+      </div>
 
       {/* <button
         className="btn bg-[#007DC4] text-white  rounded-lg "
