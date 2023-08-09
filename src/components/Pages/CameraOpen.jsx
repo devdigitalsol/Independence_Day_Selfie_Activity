@@ -77,6 +77,22 @@ const ClickSelfi = () => {
     await uploadImage(imageSrc);
   }, [webcamRef, navigate, uploadImage]);
 
+  const onImageChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      setLoading(true);
+      // setImageSrc(event.target.files[0]);
+
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        setImageSrc(e.target.result);
+        uploadImage(e.target.result);
+      };
+      reader.readAsDataURL(event.target.files[0]);
+
+      // uploadImage(null, event.target.files[0]);
+    }
+  };
+
   const webcamStyle = {
     height: "100%",
     width: "auto",
@@ -106,7 +122,7 @@ const ClickSelfi = () => {
           left: "50%",
           top: "50%",
           transform: "translate(-50%, -50%)",
-          pointerEvents: imageSrc ? "" : "none",
+          pointerEvents: imageSrc && !loading? "" : "none",
         }}
       >
         {/* <img src={TrioCircle} alt="" /> */}
@@ -120,8 +136,8 @@ const ClickSelfi = () => {
           top: "50%",
           transform: "translate(-50%, -50%)",
           borderRadius: "50%",
-          width: "250px",
-          height: "250px",
+          width: "230px",
+          height: "230px",
           overflow: "hidden",
           pointerEvents: "none",
         }}
@@ -138,8 +154,8 @@ const ClickSelfi = () => {
 
         <div
           style={{
-            width: "250px",
-            height: "250px",
+            width: "230px",
+            height: "230px",
             left: "50%",
             top: "50%",
             transform: "translate(-50%, -50%)",
@@ -178,6 +194,13 @@ const ClickSelfi = () => {
         >
           {loading ? "Please Wait" : "Capture"}
         </button>
+
+        <input type="file" onChange={onImageChange} className="custom-file-input" accept="image/*" disabled={loading}
+          style={{
+            display: imageSrc || loading ? "none" : "inline",
+          }}/>
+        
+
         <p>{error}</p>
         <p style={{ display: imageSrc && !loading ? "block" : "none" }}>
           Please slide index fingers on the above circle Life Acidity Free Life
