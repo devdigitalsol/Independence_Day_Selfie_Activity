@@ -54,6 +54,11 @@ const LoginForm = () => {
     navigate("/flagpage");
   };
 
+  const handleBlur = () => {
+    document.body.scrollTop = 0;
+    document.getElementsByClassName('backImage').scrollTop = 0;
+  };
+
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -74,6 +79,7 @@ const LoginForm = () => {
                 name="employeeCode"
                 id="employeeCode"
                 {...register("employeeCode")}
+                onBlur={handleBlur}
                 className="textField placeholder-[#007DC4] text-[#007DC4] placeholder:text-[14px] text-center placeholder:font-extralight   "
               />
               <p className="error-msg">{errors.employeeCode?.message}</p>
@@ -84,6 +90,7 @@ const LoginForm = () => {
                 name="employeeName"
                 id="employeeName"
                 {...register("employeeName")}
+                onBlur={handleBlur}
                 className="textField placeholder-[#007DC4] text-[#007DC4] placeholder:text-[14px] text-center placeholder:font-extralight  "
               />
               <p className="error-msg">{errors.employeeName?.message}</p>
@@ -94,6 +101,7 @@ const LoginForm = () => {
                 id="noOfYearsPractice"
                 {...register("noOfYearsPractice")}
                 placeholder="No. of years of practice "
+                onBlur={handleBlur}
                 className="textField placeholder-[#007DC4] text-[#007DC4] placeholder:text-[14px] text-center placeholder:font-extralight   "
               />
               <p className="error-msg">{errors.noOfYearsPractice?.message}</p>
@@ -104,6 +112,7 @@ const LoginForm = () => {
                 id="noOfPatientsDaily"
                 {...register("noOfPatientsDaily")}
                 placeholder="No. of patients treated daily "
+                onBlur={handleBlur}
                 className="textField placeholder-[#007DC4] text-[#007DC4] placeholder:text-[14px] text-center placeholder:font-extralight  "
               />
               <p className="error-msg">{errors.noOfPatientsDaily?.message}</p>
@@ -116,6 +125,7 @@ const LoginForm = () => {
                     name="termsAndCondition"
                     id="termsAndCondition"
                     className="checkbox-size"
+                    onBlur={handleBlur}
                     {...register("termsAndCondition")}
                   />
                   <span className="text-[#007DC4] text-[16px] font-medium  ">
