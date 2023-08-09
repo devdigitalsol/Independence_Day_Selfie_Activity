@@ -10,6 +10,7 @@ import { useUserContext } from "../context/UserContext";
 import Text2 from "../../assets/images/Asset21_2.png";
 import axios from "axios";
 import Footer from "../Layout/Footer";
+import Header from "../Layout/Header";
 
 const Template = () => {
   const [loading, setLoading] = useState(false);

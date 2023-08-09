@@ -138,7 +138,7 @@ const LoginForm = () => {
             <div className="h-[16%] center-content-flex">
               <button
                 type="submit"
-                disabled={!isValid}
+                // disabled={!isValid}
                 id="submit_button"
                 className="button-design  bg-[#007DC4]"
               >
@@ -150,10 +150,10 @@ const LoginForm = () => {
         {modalOpen && (
           <Modal setModalOpen={setModalOpen}>
             <div className="center-content-flex flex-col gap-4">
-              <h4 className="text-[#007DC4] font-bold text-2xl mb-1">
-                Terms & Conditions:
+              <h4 className="text-[#007DC4] font-bold text-xl mb-1">
+                Terms & Conditions
               </h4>
-              <p className="xl:text-xl lg:text-xl md:text-xl sm:text-lg text-xl  text-[#007DC4]">
+              <p className=" text-md  text-[#007DC4]">
                 I have opted to use the “Acidity while on wheels” activity web
                 link of my own volition and agree to upload my personal details
                 therein for participating in the activity. I state that the
@@ -162,7 +162,17 @@ const LoginForm = () => {
                 on the same. I understand that no data will be retained by the
                 Company post the event. I agree that the all contents used for
                 promotion of the event shall be the property of Dr. Reddy's, and
-                meant for its use only.
+                meant for its use only.I have read the terms and conditions of
+                the Dr. Reddy's data privacy policy as mentioned in
+                <a
+                  href=""
+                  // href="https://www.drreddys.com/privacy-policy#:~:text=We%20will%20not%20knowingly%20collect,through%20direct%20off%2Dline%20contact"
+                  className="text-[#007DC4] break-all "
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://www.drreddys.com/privacy-policy#:~:text=We%20will%20not%20knowingly%20collect,through%20direct%20off%2Dline%20contact
+                </a>
               </p>
             </div>
           </Modal>
