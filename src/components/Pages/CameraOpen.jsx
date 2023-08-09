@@ -22,32 +22,31 @@ const ClickSelfi = () => {
 
   const uploadImage = async (imageSrc) => {
     let strImage = imageSrc.replace(/^data:image\/[a-z]+;base64,/, "");
-    let formData = new FormData();
-    formData.append('upload_file', imageSrc); 
-
     try {
       const resp = await axios.post(
-        `https://vps.solmc.in/caricature/index.php`,
-        formData,
+        `https://3d-cartoon-face.p.rapidapi.com/run`,
+        {
+          image: strImage,
+          render_mode: "anime",
+          output_mode: "base64",
+        },
         {
           headers: {
-            // 'HTTP_SECRETKEY': 'ae9e762a', 
-            // ...formData.getHeaders()
+            "content-type": "application/json",
+            "X-RapidAPI-Key":
+              "3e31858802mshdb353e945e71814p1ebd9djsnd7bcd3f8ca9f",
+            "X-RapidAPI-Host": "3d-cartoon-face.p.rapidapi.com",
           },
         }
       );
-      console.log(resp);
-      
-
-      if (resp.data.status == 200) {
-        const imageConverted = resp?.data?.filename;
+      if (resp.status === 215) {
+        setError(resp.data.msg);
         setLoading(false);
         return;
       }
-      
-      setError(resp.data.message);
-      
-      // navigate("/selfie-preview", { state: imageConverted });
+      console.log(resp);
+      const imageConverted = resp?.data?.output_base64;
+      navigate("/selfie-preview", { state: imageConverted });
     } catch (error) {
       setError(error);
       setLoading(false);
