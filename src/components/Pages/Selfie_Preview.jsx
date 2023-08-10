@@ -20,16 +20,16 @@ const Selfie_Preview = () => {
 
       {/* <img src={AcidityText} alt="" className=" absolute" />
       <img src={AcidityText} alt="" className=" absolute" /> */}
-      <div style={{
-        position: 'absolute',
-        backgroundImage: `url(${AcidityText})`,
-        height: '100%',
-        width: '100%',
-        zIndex: '0',
-        backgroundSize: '100% auto'
-      }}>
-
-      </div>
+      <div
+        style={{
+          position: "absolute",
+          backgroundImage: `url(${AcidityText})`,
+          height: "100%",
+          width: "100%",
+          zIndex: "0",
+          backgroundSize: "100% auto",
+        }}
+      ></div>
 
       <div
         style={{
@@ -37,7 +37,7 @@ const Selfie_Preview = () => {
           left: "50%",
           top: "50%",
           transform: "translate(-50%, -50%)",
-          width: '300px'
+          width: "300px",
         }}
       >
         <img

@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../context/UserContext";
 import { useAuth } from "../context/AuthContext";
 import Footer from "../Layout/Footer";
+import Logo1 from "../Layout/Logo1";
+import Logo2 from "../Layout/Logo2";
 
 const schema = yup
   .object({
@@ -191,7 +193,6 @@ const LoginForm = () => {
           </Modal>
         )}
       </form>
-
       <Footer />
     </div>
   );
