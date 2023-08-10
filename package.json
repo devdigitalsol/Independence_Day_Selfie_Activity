@@ -23,7 +23,9 @@
     "react-data-table-component-with-filter": "^7.5.3",
     "react-webcam": "^7.1.1",
     "yup": "^1.2.0",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "@fancyapps/ui": "^5.0.19",
+    "@fontsource/poppins": "^5.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

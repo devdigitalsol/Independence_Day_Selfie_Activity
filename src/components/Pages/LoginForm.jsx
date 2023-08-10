@@ -85,7 +85,7 @@ const LoginForm = () => {
                 id="employeeCode"
                 {...register("employeeCode")}
                 onBlur={handleBlur}
-                className="textField placeholder-[#007DC4] text-[#007DC4] placeholder:text-[14px] text-center placeholder:font-extralight   "
+                className="textField placeholder-[#007DC4] text-[#007DC4] placeholder:text-[14px]  text-center placeholder:font-extralight   "
               />
               <p className="error-msg">{errors.employeeCode?.message}</p>
             </div>
