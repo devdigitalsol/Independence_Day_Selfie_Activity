@@ -47,13 +47,13 @@ const AdminPage = () => {
       name: "Image",
       width: "200px",
       selector: (row) => row.media_path,
-      // cell: (row) => {
-      //   return (
-      //     <a href={row.media_path}>
-      //       <img src={row.media_path} alt={row.doctor_name} width={40} />
-      //     </a>
-      //   );
-      // },
+      cell: (row) => {
+        return (
+          <a href={row.media_path} className="text-[#007DC4]">
+            View
+          </a>
+        );
+      },
     },
   ]);
 
