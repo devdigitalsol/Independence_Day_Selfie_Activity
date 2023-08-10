@@ -11,7 +11,7 @@ const Logo2 = () => {
         right: "10px",
         width: "100%",
         height: "auto",
-        maxWidth: "90px",
+        maxWidth: "100px",
         zIndex: 100,
         pointerEvents: "none",
       }}
