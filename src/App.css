@@ -89,6 +89,18 @@ img{
   font-style:inherit;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
+.download-button-design{
+  background: #007DC4;
+  color:white;
+  font-size: 20px;
+  width:120px;
+  border-radius: 8px;
+  padding: 2px;
+  font-weight: 600;
+  font-style:inherit;
+  z-index: 40;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
 #submit_button[disabled]
 {
   border: 1px solid #999999;

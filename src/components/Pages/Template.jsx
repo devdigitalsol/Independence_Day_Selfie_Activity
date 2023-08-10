@@ -137,7 +137,7 @@ const Template = () => {
           }}
         >
           <button
-            className="button-design"
+            className="download-button-design"
             onClick={downLoadPoster}
             disabled={loading}
             style={{ marginTop: "10px" }}
@@ -148,10 +148,10 @@ const Template = () => {
         <Logo2 />
         <Footer />
         <p className="text-[4px] absolute bottom-5 right-12  w-[40%] text-center font-semibold">
-          GGI-CO-A1-AQS-300027513-AM-G23-0684 *
+          GGI-CO-A1-AQS-300027513-AM-G23-0684
         </p>
         <p className="text-[4px] absolute bottom-3 right-8 text-center font-semibold">
-          Creative expression {"  "} For the use of registered medical
+          * Creative expression {"  "} For the use of registered medical
           practitioners, hospitals or laboratories only.
         </p>
       </div>
