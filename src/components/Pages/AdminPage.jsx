@@ -16,7 +16,7 @@ const AdminPage = () => {
       selector: (row, index) => index + 1,
     },
     {
-      name: "Doctor Code",
+      name: "Employee Code",
       sortable: true,
       filterable: true,
       width: "200px",
