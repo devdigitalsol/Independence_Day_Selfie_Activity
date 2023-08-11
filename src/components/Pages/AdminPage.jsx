@@ -49,7 +49,7 @@ const AdminPage = () => {
       selector: (row) => row.media_path,
       cell: (row) => {
         return (
-          <a href={row.media_path} className="text-[#007DC4]">
+          <a href={row.media_path} target="_blank" className="text-[#007DC4]">
             View
           </a>
         );
